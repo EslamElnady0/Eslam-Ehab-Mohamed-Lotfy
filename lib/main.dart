@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Screens/opening_screen.dart';
+import 'Screens/login_screen.dart';
 
 void main() {
   runApp(
@@ -17,7 +17,7 @@ class OurQuizzApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.green),
-        home: OpeningScreen(),
+        home: LoginScreen(),
       ),
     );
   }
