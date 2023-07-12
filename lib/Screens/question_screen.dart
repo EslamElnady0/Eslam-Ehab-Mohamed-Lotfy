@@ -27,11 +27,18 @@ class QuestionScreen extends StatelessWidget {
             )
           ],
         ),
-        actions: const [
-          CircleAvatar(
-            child: Image(image: AssetImage("assets/question.png")),
+        actions: [
+          Container(
+            height: 40,
+            width: 40,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    fit: BoxFit.scaleDown,
+                    image: AssetImage("assets/question.png")),
+                color: Colors.white,
+                shape: BoxShape.circle),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           )
         ],
