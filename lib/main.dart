@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iti_quizz_app/Screens/category_screen.dart';
 import 'package:iti_quizz_app/Screens/login_screen.dart';
 import 'package:iti_quizz_app/Screens/opening_screen.dart';
-import 'package:iti_quizz_app/Screens/question_screen.dart';
 import 'package:iti_quizz_app/Screens/score_screen.dart';
-import 'package:iti_quizz_app/Widgets/cat_container.dart';
 
 void main() {
   runApp(
