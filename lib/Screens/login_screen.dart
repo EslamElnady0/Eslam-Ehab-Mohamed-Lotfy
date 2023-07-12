@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:iti_quizz_app/Screens/opening_screen.dart';
+import 'package:iti_quizz_app/Screens/category_screen.dart';
 
 class LoginScreen extends StatelessWidget {
+  static const String screenName = "login";
   const LoginScreen({super.key});
 
   @override
@@ -98,9 +99,7 @@ class LoginScreen extends StatelessWidget {
                                               BorderRadius.circular(30)))),
                               onPressed: () {
                                 Navigator.of(context)
-                                    .push(MaterialPageRoute(builder: (context) {
-                                  return const OpeningScreen();
-                                }));
+                                    .pushNamed(CategoryScreen.screenName);
                               },
                               child: const Text(
                                 "Login",

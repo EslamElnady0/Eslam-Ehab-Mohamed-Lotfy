@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iti_quizz_app/Screens/login_screen.dart';
 
 class OpeningScreen extends StatelessWidget {
+  static const String screenName = "opening";
+
   const OpeningScreen({super.key});
 
   @override
@@ -45,7 +48,7 @@ class OpeningScreen extends StatelessWidget {
                     shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)))),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Navigator.of(context).pushNamed(LoginScreen.screenName);
                 },
                 child: const Text(
                   "Go to login",
