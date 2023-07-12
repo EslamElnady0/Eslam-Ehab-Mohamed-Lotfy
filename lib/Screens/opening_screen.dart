@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iti_quizz_app/Screens/login_screen.dart';
+import 'package:iti_quizz_app/Widgets/custom_button.dart';
 
 class OpeningScreen extends StatelessWidget {
   static const String screenName = "opening";
@@ -40,20 +41,16 @@ class OpeningScreen extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                        const MaterialStatePropertyAll(Colors.redAccent),
-                    padding: const MaterialStatePropertyAll(EdgeInsets.all(12)),
-                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)))),
+            CustomButton(
+                backgroundColor: Colors.red,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                fontSize: 20,
+                padding: const EdgeInsets.all(12),
+                text: "Go To Login",
                 onPressed: () {
                   Navigator.of(context).pushNamed(LoginScreen.screenName);
-                },
-                child: const Text(
-                  "Go to login",
-                  style: TextStyle(fontSize: 20),
-                ))
+                })
           ],
         ),
       ),

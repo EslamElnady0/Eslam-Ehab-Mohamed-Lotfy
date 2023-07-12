@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:iti_quizz_app/Global/global.dart';
 import 'package:iti_quizz_app/Screens/category_screen.dart';
+import 'package:iti_quizz_app/Widgets/custom_button.dart';
+import 'package:iti_quizz_app/Widgets/custom_text_button.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   static const String screenName = "login";
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,37 +52,31 @@ class LoginScreen extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: "username",
-                            prefixIcon: const Icon(Icons.person),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(20)),
-                            border: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(20)),
+                        Form(
+                          key: formKey,
+                          child: TextFormField(
+                            validator: (data) {
+                              final RegExp regex = RegExp(r'^[A-Z][a-zA-Z]*$');
+
+                              if (data!.isEmpty) {
+                                return "this field is requied!";
+                              } else if (data.length < 9) {
+                                return "Email should be more than 9 characters";
+                              } else if (!regex.hasMatch(data)) {
+                                return 'Please your name with first letter in uppercase';
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                              hintText: "username",
+                              prefixIcon: const Icon(Icons.person),
+                              enabledBorder: border,
+                              border: border,
+                            ),
                           ),
                         ),
                         const SizedBox(
                           height: 10,
-                        ),
-                        TextField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            hintText: "password",
-                            prefixIcon: const Icon(Icons.lock),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(20)),
-                            border: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(20)),
-                          ),
                         ),
                         Row(
                           children: [
@@ -86,25 +90,20 @@ class LoginScreen extends StatelessWidget {
                         const SizedBox(
                           height: 30,
                         ),
-                        Container(
-                          width: 200,
+                        SizedBox(
+                          width: 130,
                           height: 50,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20)),
-                          child: ElevatedButton(
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(30)))),
+                          child: CustomButton(
+                              fontSize: 20,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              text: "Login",
                               onPressed: () {
-                                Navigator.of(context)
-                                    .pushNamed(CategoryScreen.screenName);
-                              },
-                              child: const Text(
-                                "Login",
-                                style: TextStyle(fontSize: 20),
-                              )),
+                                if (formKey.currentState!.validate()) {
+                                  Navigator.of(context)
+                                      .pushNamed(CategoryScreen.screenName);
+                                }
+                              }),
                         ),
                         const SizedBox(
                           height: 20,
@@ -130,20 +129,14 @@ class LoginScreen extends StatelessWidget {
                                 value: true,
                                 onChanged: (onChanged) {},
                                 activeColor: Colors.grey),
-                            GestureDetector(
+                            CustomTextButton(
+                              title: "Remember Me",
                               onTap: () {},
-                              child: const Text(
-                                "Remember me?",
-                                style: TextStyle(color: Colors.grey),
-                              ),
                             ),
                             const Spacer(),
-                            GestureDetector(
+                            CustomTextButton(
                               onTap: () {},
-                              child: const Text(
-                                "Forgot Password?",
-                                style: TextStyle(color: Colors.grey),
-                              ),
+                              title: "Forgot Password?",
                             )
                           ],
                         ),
