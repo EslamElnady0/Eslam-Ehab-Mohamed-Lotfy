@@ -5,17 +5,24 @@ import 'package:iti_quizz_app/Screens/question_screen.dart';
 class CatContainer extends StatelessWidget {
   final Color color;
   final String title;
-  const CatContainer({super.key, required this.color, required this.title});
+  final List questList;
+  const CatContainer(
+      {super.key,
+      required this.color,
+      required this.title,
+      required this.questList});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (context) {
               return QuestionScreen(
                 testTitle: title,
+                themeColor: color,
+                questList: questList,
               );
             },
           ));

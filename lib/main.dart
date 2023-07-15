@@ -4,6 +4,8 @@ import 'package:iti_quizz_app/Screens/login_screen.dart';
 import 'package:iti_quizz_app/Screens/opening_screen.dart';
 import 'package:iti_quizz_app/Screens/score_screen.dart';
 
+import 'Screens/question_screen.dart';
+
 void main() {
   runApp(
       const OurQuizzApp()); // runApp fnction takes the root Widget that we choose to start with
@@ -21,8 +23,7 @@ class OurQuizzApp extends StatelessWidget {
           OpeningScreen.screenName: (context) => const OpeningScreen(),
           LoginScreen.screenName: (context) => const LoginScreen(),
           CategoryScreen.screenName: (context) => const CategoryScreen(),
-          // QuestionScreen.screenName: (context) =>
-          //     const QuestionScreen(testTitle: title),
+          QuestionScreen.screenName: (context) => const QuestionScreen(),
           ScoreScreen.screenName: (context) => const ScoreScreen(),
         },
         debugShowCheckedModeBanner: false,

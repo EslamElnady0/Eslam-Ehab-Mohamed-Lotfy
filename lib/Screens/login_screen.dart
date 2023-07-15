@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:iti_quizz_app/Global/global.dart';
+import 'package:iti_quizz_app/Global/global_style.dart';
 import 'package:iti_quizz_app/Screens/category_screen.dart';
 import 'package:iti_quizz_app/Widgets/custom_button.dart';
 import 'package:iti_quizz_app/Widgets/custom_text_button.dart';
+
+final controller = TextEditingController();
 
 class LoginScreen extends StatefulWidget {
   static const String screenName = "login";
@@ -55,14 +57,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         Form(
                           key: formKey,
                           child: TextFormField(
+                            controller: controller,
                             validator: (data) {
-                              final RegExp regex = RegExp(r'^[A-Z][a-zA-Z]*$');
-
                               if (data!.isEmpty) {
                                 return "this field is requied!";
                               } else if (data.length < 9) {
                                 return "Email should be more than 9 characters";
-                              } else if (!regex.hasMatch(data)) {
+                              } else if (!RegExp(r'^[A-Z][a-zA-Z\s]*$')
+                                  .hasMatch(data)) {
                                 return 'Please your name with first letter in uppercase';
                               }
                               return null;
@@ -100,8 +102,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               text: "Login",
                               onPressed: () {
                                 if (formKey.currentState!.validate()) {
-                                  Navigator.of(context)
-                                      .pushNamed(CategoryScreen.screenName);
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (_) => const CategoryScreen()));
                                 }
                               }),
                         ),
