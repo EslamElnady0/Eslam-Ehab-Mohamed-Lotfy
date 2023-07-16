@@ -49,36 +49,6 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
-
-  /// `Our Quiz App`
-  String get welcome {
-    return Intl.message(
-      'Our Quiz App',
-      name: 'welcome',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Creativity is allowing yourself to make mistakes`
-  String get qoute {
-    return Intl.message(
-      'Creativity is allowing yourself to make mistakes',
-      name: 'qoute',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Go To Login`
-  String get goToLogin {
-    return Intl.message(
-      'Go To Login',
-      name: 'goToLogin',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -87,7 +57,6 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 
