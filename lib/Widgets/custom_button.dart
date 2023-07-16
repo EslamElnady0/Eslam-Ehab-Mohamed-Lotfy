@@ -24,9 +24,11 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
           shape: shape, backgroundColor: backgroundColor, padding: padding),
-      child: Text(
-        text,
-        style: TextStyle(fontSize: fontSize),
+      child: FittedBox(
+        child: Text(
+          text,
+          style: TextStyle(fontSize: fontSize),
+        ),
       ),
     );
   }

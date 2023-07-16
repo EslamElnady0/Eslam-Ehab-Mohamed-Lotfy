@@ -5,7 +5,14 @@ import 'package:flutter/material.dart';
 class CorrectAnswersScreen extends StatelessWidget {
   final List? questList;
   final Color? themeColor;
-  const CorrectAnswersScreen({super.key, this.questList, this.themeColor});
+  final Color? textColor;
+  final String? backgroundImage;
+  const CorrectAnswersScreen(
+      {super.key,
+      this.questList,
+      this.themeColor,
+      this.textColor,
+      this.backgroundImage});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +24,14 @@ class CorrectAnswersScreen extends StatelessWidget {
         title: const Text("Correct Answers"),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Align(
-          alignment: Alignment.centerLeft,
-          child: SingleChildScrollView(
+      body: Align(
+        alignment: Alignment.centerLeft,
+        child: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    fit: BoxFit.cover, image: AssetImage(backgroundImage!))),
             child: Column(
               children: [
                 ...questList!.map((e) {
@@ -30,8 +40,11 @@ class CorrectAnswersScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        questList![index]["question"],
-                        style: const TextStyle(fontSize: 20),
+                        questList![index]["question"] + " ?",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: textColor,
+                            fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
                         height: 20,
@@ -45,18 +58,28 @@ class CorrectAnswersScreen extends StatelessWidget {
                                 alignment: Alignment.centerLeft,
                                 child: Row(
                                   children: [
-                                    Text("${answerIndex + 1}- " +
-                                        questList![index]["answers"]
-                                            [answerIndex]["ans"]),
-                                    const Icon(Icons.check)
+                                    Text(
+                                        "${answerIndex + 1}- " +
+                                            questList![index]["answers"]
+                                                [answerIndex]["ans"],
+                                        style: TextStyle(
+                                            color: textColor,
+                                            fontWeight: FontWeight.bold)),
+                                    Icon(
+                                      Icons.check,
+                                      color: textColor,
+                                    )
                                   ],
                                 ),
                               )
                             : Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text("${answerIndex + 1}- " +
-                                    questList![index]["answers"][answerIndex]
-                                        ["ans"])),
+                                child: Text(
+                                    "${answerIndex + 1}- " +
+                                        questList![index]["answers"]
+                                            [answerIndex]["ans"],
+                                    style: TextStyle(color: textColor)),
+                              ),
                       const SizedBox(
                         height: 20,
                       ),

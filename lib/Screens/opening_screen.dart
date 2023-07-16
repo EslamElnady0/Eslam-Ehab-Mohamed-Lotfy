@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iti_quizz_app/Screens/login_screen.dart';
 import 'package:iti_quizz_app/Widgets/custom_button.dart';
+import 'package:page_transition/page_transition.dart';
 
 class OpeningScreen extends StatelessWidget {
   static const String screenName = "opening";
@@ -50,7 +51,10 @@ class OpeningScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 text: "Go To Login",
                 onPressed: () {
-                  Navigator.of(context).pushNamed(LoginScreen.screenName);
+                  Navigator.of(context).push(PageTransition(
+                      child: const LoginScreen(),
+                      alignment: Alignment.center,
+                      type: PageTransitionType.fade));
                 })
           ],
         ),

@@ -1,11 +1,3 @@
-import 'package:flutter/material.dart';
-
-Locale language = const Locale("en");
-
-bool isArabic() {
-  return language == Locale("ar");
-}
-
 List sportTest = [
   {
     "question": "How many teams had won the world cup",

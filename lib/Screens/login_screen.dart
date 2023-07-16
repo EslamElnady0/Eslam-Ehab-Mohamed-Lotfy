@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iti_quizz_app/Global/global_style.dart';
-import 'package:iti_quizz_app/Screens/category_screen.dart';
-import 'package:iti_quizz_app/Widgets/custom_button.dart';
 import 'package:iti_quizz_app/Widgets/custom_text_button.dart';
+import 'package:iti_quizz_app/Widgets/login_button.dart';
 
 final controller = TextEditingController();
 
@@ -92,21 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(
                           height: 30,
                         ),
-                        SizedBox(
-                          width: 130,
-                          height: 50,
-                          child: CustomButton(
-                              fontSize: 20,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)),
-                              text: "Login",
-                              onPressed: () {
-                                if (formKey.currentState!.validate()) {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (_) => const CategoryScreen()));
-                                }
-                              }),
-                        ),
+                        LoginButton(formKey: formKey),
                         const SizedBox(
                           height: 20,
                         ),
@@ -130,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Checkbox(
                                 value: true,
                                 onChanged: (onChanged) {},
-                                activeColor: Colors.grey),
+                                activeColor: Colors.green),
                             CustomTextButton(
                               title: "Remember Me",
                               onTap: () {},

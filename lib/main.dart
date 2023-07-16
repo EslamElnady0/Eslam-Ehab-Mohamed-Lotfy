@@ -6,7 +6,6 @@ import 'package:iti_quizz_app/Screens/opening_screen.dart';
 import 'package:iti_quizz_app/Screens/score_screen.dart';
 import 'package:iti_quizz_app/generated/l10n.dart';
 
-import 'Global/global_data.dart';
 import 'Screens/question_screen.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class OurQuizzApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: MaterialApp(
-          locale: language,
+          locale: const Locale("en"),
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,

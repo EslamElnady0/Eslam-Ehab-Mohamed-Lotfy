@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iti_quizz_app/Global/global_data.dart';
 import 'package:iti_quizz_app/Screens/opening_screen.dart';
 import 'package:iti_quizz_app/Widgets/custom_button.dart';
 
@@ -27,15 +26,12 @@ class _LanguageScreenState extends State<LanguageScreen> {
           CustomButton(
               text: "English",
               onPressed: () {
-                language = const Locale("en");
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (_) => const OpeningScreen()));
               }),
           CustomButton(
               text: "العربية",
               onPressed: () {
-                language = const Locale("ar");
-
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (_) => const OpeningScreen()));
               })
