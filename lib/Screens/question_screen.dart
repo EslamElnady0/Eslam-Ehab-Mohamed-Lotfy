@@ -80,14 +80,14 @@ class _QuestionScreenState extends State<QuestionScreen> {
             )
           ],
         ),
-        body: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(widget.backgroundImage!))),
+        body: Container(
+          padding: const EdgeInsets.all(8),
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(widget.backgroundImage!))),
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,

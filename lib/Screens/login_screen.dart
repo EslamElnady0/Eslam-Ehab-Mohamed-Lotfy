@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.grey.shade100,
                           borderRadius: BorderRadius.circular(40)),
                       child: Column(children: [
                         const SizedBox(

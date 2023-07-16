@@ -77,10 +77,6 @@ List historyTest = [
       {"ans": "Treaty of Maastricht", "score": 0},
       {"ans": "Treaty of Versailles", "score": 1},
       {"ans": "Treaty of London", "score": 0},
-      {"ans": "Treaty of Paris", "score": 0},
-      {"ans": "Treaty of Maastricht", "score": 0},
-      {"ans": "Treaty of Paris", "score": 0},
-      {"ans": "Treaty of Maastricht", "score": 0},
     ]
   },
   {
@@ -98,8 +94,6 @@ List historyTest = [
       {"ans": "Cleopatra", "score": 0},
       {"ans": "Khufu", "score": 1},
       {"ans": "Tutankhamun", "score": 0},
-      {"ans": "wwww", "score": 0},
-      {"ans": "rrrrrr", "score": 0},
     ]
   },
   {
@@ -110,12 +104,6 @@ List historyTest = [
       {"ans": "Bill of Rights", "score": 0},
       {"ans": "Declaration of Independence", "score": 0},
       {"ans": "Emancipation Proclamation", "score": 0},
-      {"ans": "Declaration of Independence", "score": 0},
-      {"ans": "Emancipation Proclamation", "score": 0},
-      {"ans": "Declaration of Independence", "score": 0},
-      {"ans": "Emancipation Proclamation", "score": 0},
-      {"ans": "Declaration of Independence", "score": 0},
-      {"ans": "Emancipation Proclamation", "score": 0}
     ]
   },
   {
@@ -236,7 +224,6 @@ List generalTest = [
       {"ans": "Blue Whale", "score": 1},
       {"ans": "Giraffe", "score": 0},
       {"ans": "Hippopotamus", "score": 0},
-      {"ans": "Giraffe", "score": 0},
     ]
   }
 ];
