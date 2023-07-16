@@ -22,18 +22,19 @@ class OpeningScreen extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.15,
+              height: MediaQuery.of(context).size.height * 0.11,
             ),
             Text(
               "Our Quiz App",
               style: GoogleFonts.anton(fontSize: 40, color: Colors.red),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.3),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.27),
             Center(
               child: Text(
-                "Improve on your own ,Don't care about others",
+                "Creativity is allowing yourself to make mistakes",
                 style: GoogleFonts.fasthand(
                   color: Colors.white,
                   fontSize: 30,

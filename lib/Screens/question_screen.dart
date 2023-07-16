@@ -9,13 +9,9 @@ class QuestionScreen extends StatefulWidget {
   final String? testTitle;
   final Color? themeColor;
   final List? questList;
-
-  const QuestionScreen({
-    super.key,
-    this.testTitle,
-    this.themeColor,
-    this.questList,
-  });
+  final String? photo;
+  const QuestionScreen(
+      {super.key, this.testTitle, this.themeColor, this.questList, this.photo});
 
   @override
   State<QuestionScreen> createState() => _QuestionScreenState();
@@ -39,9 +35,12 @@ class _QuestionScreenState extends State<QuestionScreen> {
     Map<String, dynamic> questionMap = widget.questList![index];
 
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         backgroundColor: widget.themeColor,
-        leading: const BackButton(),
+        leading: BackButton(onPressed: () {
+          Navigator.pop(context);
+        }),
         centerTitle: true,
         title: Column(
           children: [
@@ -59,10 +58,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
           Container(
             height: 40,
             width: 40,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 image: DecorationImage(
-                    fit: BoxFit.scaleDown,
-                    image: AssetImage("assets/question.png")),
+                    fit: BoxFit.cover, image: AssetImage(widget.photo!)),
                 color: Colors.white,
                 shape: BoxShape.circle),
           ),
@@ -73,40 +71,42 @@ class _QuestionScreenState extends State<QuestionScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                questionMap["question"],
-                style: const TextStyle(fontSize: 25),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  questionMap["question"],
+                  style: const TextStyle(fontSize: 25),
+                ),
               ),
-            ),
-            const Divider(),
-            for (int ansIndex = 0;
-                ansIndex < questionMap["answers"].length;
-                ansIndex++)
-              CustomButton(
-                  backgroundColor: widget.themeColor,
-                  text: questionMap["answers"][ansIndex]["ans"],
-                  onPressed: () {
-                    if (index == widget.questList!.length - 1) {
-                      if (questionMap["answers"][ansIndex]["score"] == 1) {
-                        score++;
+              const Divider(),
+              for (int ansIndex = 0;
+                  ansIndex < questionMap["answers"].length;
+                  ansIndex++)
+                CustomButton(
+                    backgroundColor: widget.themeColor,
+                    text: questionMap["answers"][ansIndex]["ans"],
+                    onPressed: () {
+                      if (index == widget.questList!.length - 1) {
+                        if (questionMap["answers"][ansIndex]["score"] == 1) {
+                          score++;
+                        }
+                        toScoreScreen(context, score);
+                      } else {
+                        if (questionMap["answers"][ansIndex]["score"] == 1) {
+                          score++;
+                        }
+                        setState(() {
+                          index++;
+                        });
                       }
-                      toScoreScreen(context, score);
-                    } else {
-                      if (questionMap["answers"][ansIndex]["score"] == 1) {
-                        score++;
-                      }
-                      setState(() {
-                        index++;
-                      });
-                    }
-                  })
-          ],
+                    })
+            ],
+          ),
         ),
       ),
     );

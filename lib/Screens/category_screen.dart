@@ -14,17 +14,20 @@ class CategoryScreen extends StatelessWidget {
       body: Column(
         children: [
           CatContainer(
+            photo: "assets/sports.jpg",
             title: "Sports Test",
-            color: Colors.red,
+            color: Colors.green,
             questList: sportTest,
           ),
           CatContainer(
+            photo: "assets/History.png",
             title: "History Test",
-            color: Colors.blue,
+            color: const Color.fromARGB(255, 107, 1, 1),
             questList: historyTest,
           ),
           CatContainer(
-            title: "Gen Knowledge Test",
+            photo: "assets/gen_knowledge.jpg",
+            title: "General Test",
             color: Colors.teal,
             questList: generalTest,
           ),
