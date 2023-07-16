@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:iti_quizz_app/Screens/category_screen.dart';
 import 'package:iti_quizz_app/Screens/login_screen.dart';
 import 'package:iti_quizz_app/Screens/opening_screen.dart';
 import 'package:iti_quizz_app/Screens/score_screen.dart';
-import 'package:iti_quizz_app/generated/l10n.dart';
 
 import 'Screens/question_screen.dart';
 
@@ -19,14 +17,6 @@ class OurQuizzApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: MaterialApp(
-          locale: const Locale("en"),
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
           routes: {
             OpeningScreen.screenName: (context) => const OpeningScreen(),
             LoginScreen.screenName: (context) => const LoginScreen(),
