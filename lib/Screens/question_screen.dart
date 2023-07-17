@@ -44,7 +44,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   int score = 0;
   @override
   Widget build(BuildContext context) {
-    Map<String, dynamic> questionMap = widget.questList![index];
+    // Map<String, dynamic> questionMap = widget.questList![index];
 
     return Scaffold(
         appBar: AppBar(
@@ -80,6 +80,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             )
           ],
         ),
+        ////////////////////////////////////////////////
         body: Container(
           padding: const EdgeInsets.all(8),
           height: MediaQuery.of(context).size.height,
@@ -92,31 +93,33 @@ class _QuestionScreenState extends State<QuestionScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    questionMap["question"] + " ?",
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: widget.questionColor,
-                        fontWeight: FontWeight.bold),
-                  ),
+                Text(
+                  widget.questList![index]["question"] + " ?",
+                  style: TextStyle(
+                      fontSize: 25,
+                      color: widget.questionColor,
+                      fontWeight: FontWeight.bold),
                 ),
                 const Divider(),
                 for (int ansIndex = 0;
-                    ansIndex < questionMap["answers"].length;
+                    ansIndex < widget.questList![index]["answers"].length;
                     ansIndex++)
                   CustomButton(
                       backgroundColor: widget.themeColor,
-                      text: questionMap["answers"][ansIndex]["ans"],
+                      text: widget.questList![index]["answers"][ansIndex]
+                          ["ans"],
                       onPressed: () {
                         if (index == widget.questList!.length - 1) {
-                          if (questionMap["answers"][ansIndex]["score"] == 1) {
+                          if (widget.questList![index]["answers"][ansIndex]
+                                  ["score"] ==
+                              1) {
                             score++;
                           }
                           toScoreScreen(context, score);
                         } else {
-                          if (questionMap["answers"][ansIndex]["score"] == 1) {
+                          if (widget.questList![index]["answers"][ansIndex]
+                                  ["score"] ==
+                              1) {
                             score++;
                           }
                           setState(() {
@@ -129,53 +132,4 @@ class _QuestionScreenState extends State<QuestionScreen> {
           ),
         ));
   }
-
-  // CustomButton answerButton(
-  //     Map<String, dynamic> questionMap, BuildContext context, int ansIndex) {
-  //   return CustomButton(
-  //       backgroundColor: widget.themeColor,
-  //       text: questionMap["answers"][ansIndex]["ans"],
-  //       onPressed: () {
-  //         if (index == widget.questList!.length - 1) {
-  //           if (questionMap["answers"][ansIndex]["score"] == 1) {
-  //             score++;
-  //           }
-  //           toScoreScreen(context, score);
-  //         } else {
-  //           if (questionMap["answers"][ansIndex]["score"] == 1) {
-  //             score++;
-  //           }
-  //           setState(() {
-  //             index++;
-  //           });
-  //         }
-  //       });
-  // }
 }
-
-
-//logical error checking on the last value of answers always=> how can this work ?
-// ...questionMap["answers"].map((e) {
-            //   ansIndex++;
-
-            //   return CustomButton(
-            //       text: questionMap["answers"][ansIndex]["ans"],
-            //       onPressed: () {
-            //         if (index == widget.questList!.length - 1) {
-            //           if (questionMap["answers"][ansIndex]["score"] == 1) {
-            //             score++;
-            //           }
-            //           toScoreScreen(context, score);
-            //         } else {
-            //           if (questionMap["answers"][ansIndex]["score"] == 1) {
-            //             score++;
-            //           }
-            //           setState(() {
-            //             index++;
-            //             ansIndex = -1;
-            //           });
-            //         }
-
-            //       });
-                  
-            // }),

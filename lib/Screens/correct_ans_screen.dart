@@ -32,6 +32,7 @@ class CorrectAnswersScreen extends StatelessWidget {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.cover, image: AssetImage(backgroundImage!))),
+            ////////////////////////////////
             child: Column(
               children: [
                 ...questList!.map((e) {

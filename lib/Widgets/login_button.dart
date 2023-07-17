@@ -15,12 +15,12 @@ class LoginButton extends StatefulWidget {
 enum ButtonState { init, loading }
 
 class _LoginButtonState extends State<LoginButton> {
-  bool isAnimating = true;
   ButtonState state = ButtonState.init;
+  bool isAnimating = true;
 
   @override
   Widget build(BuildContext context) {
-    final isStreached = isAnimating || state == ButtonState.init;
+    final bool isStreached = isAnimating || state == ButtonState.init;
 
     return AnimatedContainer(
       onEnd: () => setState(() => isAnimating = !isAnimating),
