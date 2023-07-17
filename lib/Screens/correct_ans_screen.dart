@@ -5,14 +5,9 @@ import 'package:flutter/material.dart';
 class CorrectAnswersScreen extends StatelessWidget {
   final List? questList;
   final Color? themeColor;
-  final Color? textColor;
   final String? backgroundImage;
   const CorrectAnswersScreen(
-      {super.key,
-      this.questList,
-      this.themeColor,
-      this.textColor,
-      this.backgroundImage});
+      {super.key, this.questList, this.themeColor, this.backgroundImage});
 
   @override
   Widget build(BuildContext context) {
@@ -37,56 +32,61 @@ class CorrectAnswersScreen extends StatelessWidget {
               children: [
                 ...questList!.map((e) {
                   index++;
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        questList![index]["question"] + " ?",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: textColor,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      for (int answerIndex = 0;
-                          answerIndex <
-                              (questList![index]["answers"] as List).length;
-                          answerIndex++)
-                        questList![index]["answers"][answerIndex]["score"] == 1
-                            ? Align(
-                                alignment: Alignment.centerLeft,
-                                child: Row(
-                                  children: [
-                                    Text(
-                                        "${answerIndex + 1}- " +
-                                            questList![index]["answers"]
-                                                [answerIndex]["ans"],
-                                        style: TextStyle(
-                                            color: textColor,
-                                            fontWeight: FontWeight.bold)),
-                                    Icon(
-                                      Icons.check,
-                                      color: textColor,
-                                    )
-                                  ],
-                                ),
-                              )
-                            : Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
+                  return Container(
+                    margin: const EdgeInsets.only(bottom: 10),
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        boxShadow: const [BoxShadow(blurRadius: 5)],
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          questList![index]["question"] + " ?",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        for (int answerIndex = 0;
+                            answerIndex <
+                                (questList![index]["answers"] as List).length;
+                            answerIndex++)
+                          questList![index]["answers"][answerIndex]["score"] ==
+                                  1
+                              ? Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                          "${answerIndex + 1}- " +
+                                              questList![index]["answers"]
+                                                  [answerIndex]["ans"],
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold)),
+                                      const Icon(
+                                        Icons.check,
+                                      )
+                                    ],
+                                  ),
+                                )
+                              : Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
                                     "${answerIndex + 1}- " +
                                         questList![index]["answers"]
                                             [answerIndex]["ans"],
-                                    style: TextStyle(color: textColor)),
-                              ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                    ],
+                                  ),
+                                ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    ),
                   );
-                })
+                }),
               ],
             ),
           ),

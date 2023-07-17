@@ -10,14 +10,12 @@ class CatContainer extends StatelessWidget {
   final String photo;
   final String backgroundImage;
   final Alignment type;
-  final Color textColor;
   const CatContainer(
       {super.key,
       required this.color,
       required this.title,
       required this.questList,
       required this.type,
-      required this.textColor,
       required this.backgroundImage,
       required this.photo});
 
@@ -28,7 +26,6 @@ class CatContainer extends StatelessWidget {
         onTap: () {
           Navigator.of(context).pushReplacement(PageTransition(
               child: QuestionScreen(
-                questionColor: textColor,
                 backgroundImage: backgroundImage,
                 testTitle: title,
                 themeColor: color,

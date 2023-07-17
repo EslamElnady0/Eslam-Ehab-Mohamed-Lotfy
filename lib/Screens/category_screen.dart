@@ -14,7 +14,6 @@ class CategoryScreen extends StatelessWidget {
       body: Column(
         children: [
           CatContainer(
-            textColor: Colors.white,
             backgroundImage: "assets/football.jpg",
             type: Alignment.topCenter,
             photo: "assets/sports.jpg",
@@ -23,7 +22,6 @@ class CategoryScreen extends StatelessWidget {
             questList: sportTest,
           ),
           CatContainer(
-            textColor: Colors.black,
             backgroundImage: "assets/historyBackground.jpg",
             type: Alignment.center,
             photo: "assets/History.png",
@@ -32,7 +30,6 @@ class CategoryScreen extends StatelessWidget {
             questList: historyTest,
           ),
           CatContainer(
-            textColor: Colors.black,
             backgroundImage: "assets/generalKnowledge.jpg",
             type: Alignment.bottomCenter,
             photo: "assets/gen_knowledge.jpg",

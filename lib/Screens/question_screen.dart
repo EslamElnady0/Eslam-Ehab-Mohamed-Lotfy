@@ -10,11 +10,10 @@ class QuestionScreen extends StatefulWidget {
   final String? testTitle;
   final Color? themeColor;
   final List? questList;
-  final Color? questionColor;
+
   final String? photo;
   const QuestionScreen(
       {super.key,
-      this.questionColor,
       this.testTitle,
       this.themeColor,
       this.questList,
@@ -29,7 +28,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
   Future<void> toScoreScreen(BuildContext context, int score) async {
     await Navigator.of(context).pushReplacement(PageTransition(
         child: ScoreScreen(
-          textColor: widget.questionColor,
           questList: widget.questList,
           themeColor: widget.themeColor,
           backgroundImage: widget.backgroundImage,
@@ -93,12 +91,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  widget.questList![index]["question"] + " ?",
-                  style: TextStyle(
-                      fontSize: 25,
-                      color: widget.questionColor,
-                      fontWeight: FontWeight.bold),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      boxShadow: const [BoxShadow(blurRadius: 5)],
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    widget.questList![index]["question"] + " ?",
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 const Divider(),
                 for (int ansIndex = 0;

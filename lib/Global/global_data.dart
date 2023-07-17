@@ -8,9 +8,6 @@ List sportTest = [
       {"ans": "14 Teams", "score": 0},
     ]
   },
-
-/////
-
   {
     "question": "How many time world cup takeplace in 12 years",
     "answers": [
@@ -20,17 +17,6 @@ List sportTest = [
       {"ans": "5 times", "score": 0},
     ]
   },
-
-  {
-    "question": "who is the best player in history",
-    "answers": [
-      {"ans": "Messi", "score": 0},
-      {"ans": "Messi", "score": 0},
-      {"ans": "Messi", "score": 0},
-      {"ans": "Mohamed Abdelghani", "score": 1},
-    ]
-  },
-
   {
     "question": "who is the best player in history",
     "answers": [
@@ -41,37 +27,58 @@ List sportTest = [
     ]
   },
   {
-    "question": "who is the best player in history",
+    "question": "Which country is the birthplace of soccer (football)",
     "answers": [
-      {"ans": "Messi", "score": 0},
-      {"ans": "Messi", "score": 0},
-      {"ans": "Messi", "score": 0},
-      {"ans": "Mohamed Abdelghani", "score": 1},
+      {"ans": "England", "score": 1},
+      {"ans": "Brazil", "score": 0},
+      {"ans": "Germany", "score": 0},
+      {"ans": "Spain", "score": 0}
     ]
   },
   {
-    "question": "who is the best player in history",
+    "question":
+        "What is the highest score possible in a single frame of a game of ten-pin bowling?",
     "answers": [
-      {"ans": "Messi", "score": 0},
-      {"ans": "Messi", "score": 0},
-      {"ans": "Messi", "score": 0},
-      {"ans": "Mohamed Abdelghani", "score": 1},
+      {"ans": "10", "score": 0},
+      {"ans": "100", "score": 0},
+      {"ans": "200", "score": 0},
+      {"ans": "300", "score": 1}
     ]
   },
   {
-    "question": "who is the best player in history",
+    "question":
+        "What is the most prestigious tennis tournament held annually in England?",
     "answers": [
-      {"ans": "Messi", "score": 0},
-      {"ans": "Messi", "score": 0},
-      {"ans": "Messi", "score": 0},
-      {"ans": "Mohamed Abdelghani", "score": 1},
+      {"ans": "US Open", "score": 0},
+      {"ans": "Wimbledon", "score": 1},
+      {"ans": "Australian Open", "score": 0},
+      {"ans": "French Open", "score": 0}
     ]
   },
+  {
+    "question":
+        "What is the name of the annual cycling race that spans across France?",
+    "answers": [
+      {"ans": "Giro d'Italia", "score": 0},
+      {"ans": "Tour de France", "score": 1},
+      {"ans": "Vuelta a España", "score": 0},
+      {"ans": "Tour of California", "score": 0}
+    ]
+  },
+  {
+    "question": "Which country has won the most FIFA World Cup tournaments?",
+    "answers": [
+      {"ans": "Brazil", "score": 1},
+      {"ans": "Germany", "score": 0},
+      {"ans": "Italy", "score": 0},
+      {"ans": "Argentina", "score": 0}
+    ]
+  }
 ];
 
 List historyTest = [
   {
-    "question": "Which treaty was signed at the end of World War ?",
+    "question": "Which treaty was signed at the end of World War",
     "answers": [
       {"ans": "Treaty of Paris", "score": 0},
       {"ans": "Treaty of Maastricht", "score": 0},
@@ -80,7 +87,7 @@ List historyTest = [
     ]
   },
   {
-    "question": "When was the Great Crash of Wall Street?",
+    "question": "When was the Great Crash of Wall Street",
     "answers": [
       {"ans": "1929", "score": 1},
       {"ans": "1939", "score": 0},
@@ -88,7 +95,7 @@ List historyTest = [
   },
   {
     "question":
-        "Who was the Egyptian pharaoh responsible for the construction of the Great Pyramid of Giza?",
+        "Who was the Egyptian pharaoh responsible for the construction of the Great Pyramid of Giza",
     "answers": [
       {"ans": "Ramses II", "score": 0},
       {"ans": "Cleopatra", "score": 0},
@@ -98,7 +105,7 @@ List historyTest = [
   },
   {
     "question":
-        "Which famous document, signed in 1215, limited the power of the English monarchy and influenced the development of modern democratic principles?",
+        "Which famous document, signed in 1215, limited the power of the English monarchy and influenced the development of modern democratic principles",
     "answers": [
       {"ans": "Magna Carta", "score": 1},
       {"ans": "Bill of Rights", "score": 0},
@@ -108,14 +115,14 @@ List historyTest = [
   },
   {
     "question":
-        "In which year did Christopher Columbus first reach the Americas?",
+        "In which year did Christopher Columbus first reach the Americas",
     "answers": [
       {"ans": "1492", "score": 1},
     ]
   },
   {
     "question":
-        "The French Revolution, which began in 1789, was primarily fueled by what factors?",
+        "The French Revolution, which began in 1789, was primarily fueled by what factors",
     "answers": [
       {"ans": "Desire for independence from Spain", "score": 0},
       {"ans": "Religious conflicts", "score": 0},
@@ -124,7 +131,7 @@ List historyTest = [
     ]
   },
   {
-    "question": "Who was the leader of the Soviet Union during World War II?",
+    "question": "Who was the leader of the Soviet Union during World War II",
     "answers": [
       {"ans": "Vladimir Lenin", "score": 0},
       {"ans": "Joseph Stalin", "score": 1},
@@ -134,7 +141,7 @@ List historyTest = [
   },
   {
     "question":
-        "In what year did the Berlin Wall fall, leading to the reunification of Germany?",
+        "In what year did the Berlin Wall fall, leading to the reunification of Germany",
     "answers": [
       {"ans": "1989", "score": 1},
       {"ans": "1975", "score": 0},
@@ -144,7 +151,7 @@ List historyTest = [
   },
   {
     "question":
-        "Which famous naval battle, fought in 1805, saw Admiral Lord Nelson lead the British Royal Navy to victory against the combined fleets of France and Spain?",
+        "Which famous naval battle, fought in 1805, saw Admiral Lord Nelson lead the British Royal Navy to victory against the combined fleets of France and Spain",
     "answers": [
       {"ans": "Battle of Trafalgar", "score": 1},
       {"ans": "Battle of Waterloo", "score": 0},
@@ -153,7 +160,7 @@ List historyTest = [
     ]
   },
   {
-    "question": "The ancient city of Rome was founded in which year?",
+    "question": "The ancient city of Rome was founded in which year",
     "answers": [
       {"ans": "753 BC", "score": 1},
       {"ans": "27 BC", "score": 0},
@@ -162,7 +169,7 @@ List historyTest = [
     ]
   },
   {
-    "question": "What event is often considered the start of World War I?",
+    "question": "What event is often considered the start of World War I",
     "answers": [
       {"ans": "Assassination of Archduke Franz Ferdinand", "score": 1},
       {"ans": "Treaty of Versailles", "score": 0},
@@ -176,7 +183,7 @@ List historyTest = [
 
 List generalTest = [
   {
-    "question": "What is the capital city of France?",
+    "question": "What is the capital city of France",
     "answers": [
       {"ans": "London", "score": 0},
       {"ans": "Paris", "score": 1},
@@ -184,14 +191,14 @@ List generalTest = [
     ]
   },
   {
-    "question": "Which planet is known as the Red Planet?",
+    "question": "Which planet is known as the Red Planet",
     "answers": [
       {"ans": "Mars", "score": 1},
       {"ans": "Venus", "score": 0},
     ]
   },
   {
-    "question": "What is the chemical symbol for water?",
+    "question": "What is the chemical symbol for water",
     "answers": [
       {"ans": "Wt", "score": 0},
       {"ans": "Wa", "score": 0},
@@ -200,7 +207,7 @@ List generalTest = [
     ]
   },
   {
-    "question": "Which famous scientist developed the theory of relativity?",
+    "question": "Which famous scientist developed the theory of relativity",
     "answers": [
       {"ans": "Isaac Newton", "score": 0},
       {"ans": "Albert Einstein", "score": 1},
@@ -209,7 +216,7 @@ List generalTest = [
     ]
   },
   {
-    "question": "In which country did the Olympic Games originate?",
+    "question": "In which country did the Olympic Games originate",
     "answers": [
       {"ans": "Greece", "score": 1},
       {"ans": "Italy", "score": 0},
@@ -218,7 +225,7 @@ List generalTest = [
     ]
   },
   {
-    "question": "What is the largest mammal on Earth?",
+    "question": "What is the largest mammal on Earth",
     "answers": [
       {"ans": "African Elephant", "score": 0},
       {"ans": "Blue Whale", "score": 1},

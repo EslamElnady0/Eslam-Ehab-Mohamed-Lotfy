@@ -11,15 +11,14 @@ class ScoreScreen extends StatelessWidget {
   final int? score;
   final Color? themeColor;
   final String? backgroundImage;
-  final Color? textColor;
 
-  const ScoreScreen(
-      {super.key,
-      this.questList,
-      this.score,
-      this.themeColor,
-      this.backgroundImage,
-      this.textColor});
+  const ScoreScreen({
+    super.key,
+    this.questList,
+    this.score,
+    this.themeColor,
+    this.backgroundImage,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,32 +34,45 @@ class ScoreScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
-            RichText(
-                text: TextSpan(
-                    style: const TextStyle(fontSize: 45, color: Colors.black),
-                    children: [
-                  TextSpan(text: "Hello ", style: TextStyle(color: textColor)),
-                  TextSpan(
-                      text: controller.text,
-                      style: TextStyle(color: themeColor)),
-                  TextSpan(
-                      text: " , Your Score is :",
-                      style: TextStyle(color: textColor))
-                ])),
             Container(
-              margin: const EdgeInsets.only(top: 20),
-              height: 50,
-              width: 100,
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  border: Border.all(color: textColor!, width: 2)),
-              child: Center(
-                  child: Text(
-                "$score/${questList!.length}",
-                style: TextStyle(
-                    fontSize: 25,
-                    color: textColor,
-                    fontWeight: FontWeight.bold),
-              )),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: const [BoxShadow(blurRadius: 5)],
+                color: Colors.grey.shade200,
+              ),
+              child: Column(
+                children: [
+                  RichText(
+                      text: TextSpan(
+                          style: const TextStyle(
+                              fontSize: 45, color: Colors.black),
+                          children: [
+                        const TextSpan(text: "Hello "),
+                        TextSpan(
+                            text: controller.text,
+                            style: TextStyle(color: themeColor)),
+                        const TextSpan(
+                          text: " , Your Score is :",
+                        )
+                      ])),
+                  Container(
+                    margin: const EdgeInsets.only(top: 20),
+                    height: 50,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: themeColor!, width: 2)),
+                    child: Center(
+                        child: Text(
+                      "$score/${questList!.length}",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: themeColor,
+                          fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
@@ -83,7 +95,6 @@ class ScoreScreen extends StatelessWidget {
                   Navigator.of(context).push(PageTransition(
                       child: CorrectAnswersScreen(
                         backgroundImage: backgroundImage,
-                        textColor: textColor,
                         questList: questList!,
                         themeColor: themeColor,
                       ),
